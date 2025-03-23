@@ -11,6 +11,7 @@
   <header class="header fade-in">
     <div class="container header-container">
       <h1 class="logo">Irisportal</h1>
+      <span class="menu-toggle">&#9776;</span> <!-- Кнопка гамбургера -->
       <nav>
         <ul>
           <li><a href="#about">О моде</a></li>
@@ -20,8 +21,9 @@
         </ul>
       </nav>
     </div>
-    
   </header>
+  
+  
 
   <section id="hero" class="fade-in">
     <div class="container hero-container">
@@ -42,7 +44,7 @@
   <section id="features" class="container fade-in">
     <h2>Особенности мода</h2>
     <ul>
-      <li>Портальные устройства для мгновенных перемещений ⯪</li>
+      <li><span class="yy">Портальные устройства</span> для мгновенных перемещений <span class="yy">⯪</span></li>
       <li>Новые блоки и механизмы в стиле <span class="hh">Portal 2 ⛏</span></li>
       <li>Полная совместимость с <span class="gg">Minecraft 1.20.1 ⚓</span></li>
     </ul>
@@ -50,9 +52,9 @@
 
   <section id="download" class="container fade-in">
     <h2>Скачать мод</h2>
-    <p>Нажмите кнопку, чтобы скачать последнюю версию мода.</p>
-    <a href="https://github.com/Iriscom/irisfantom/releases/download/realise/irisportal-0.0.1-mc1.20.1-fabric.jar" class="btn">Скачать Forge</a>
-    <a href="https://github.com/Iriscom/irisfantom/releases/download/realise/irisportal-0.0.1-mc1.20.1-fabric.jar" class="btn">Скачать Fabric</a>
+    <p>Нажмите кнопку, чтобы скачать архив с модом + зависимости</p>
+    <a href="https://github.com/Iriscom/irisfantom/releases/download/realise/mods.zip" class="btn">Скачать Forge</a>
+    <a href="https://github.com/Iriscom/irisfantom/releases/download/realise1/mods.zip" class="btn">Скачать Fabric</a>
   </section>
 
   <section id="contact" class="container fade-in">
@@ -70,7 +72,7 @@
       <p class="ff">❤Отдельное спасибо IrisTech и Lopitus❤</p>
     </div>
   </footer>
-
+  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const faders = document.querySelectorAll('.fade-in');
@@ -102,6 +104,18 @@
         }
       });
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+    });
+
+    // Ваш остальной код (например, для анимации при прокрутке) остаётся без изменений
+  });
   </script>
+  
+  
 </body>
 </html>
