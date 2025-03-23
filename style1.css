@@ -1,0 +1,38 @@
+/* Переменные для цветовой гаммы и шрифтов */
+@font-face {
+  font-family: "Minecraft";
+  src: url(F77\ Minecraft.woff) format("woff");
+}
+:root {
+  --primary-color: #000000;
+  --secondary-color: #101010;
+  --portal-blue: #0091d5;
+  --portal-orange: #ff7f00;
+  --highlight-color: #4db8ff;
+  --text-color: #ffffff;
+  --light-text: #cccccc;
+  --border-color: #444;
+  --transition-time: 0.5s;
+  --font-family: 'Minecraft';
+}
+
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  transition: background var(--transition-time), color var(--transition-time);
+  text-align: center;
+  
+}
+h2 {
+  color: pink;
+}
+

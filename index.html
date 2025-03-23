@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal 2 Mod для Minecraft 1.20.1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body >
+  <header class="header fade-in">
+    <div class="container header-container">
+      <h1 class="logo">Irisportal</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">О моде</a></li>
+          <li><a href="#features">Особенности</a></li>
+          <li><a href="#download">Скачать</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </header>
+
+  <section id="hero" class="fade-in">
+    <div class="container hero-container">
+      <h2>Портальные технологии в Minecraft!</h2>
+      <p>Перенеситесь в мир <span class="hh">Portal 2</span> с нашим модом для <span class="gg">Minecraft</span>!</p>
+      <a href="#download" class="btn">Скачать мод</a>
+    </div>
+  </section>
+
+  <section id="about" class="container fade-in">
+    <h2>О моде</h2>
+    <p>
+      Этот мод для <span class="gg">Minecraft 1.20.1</span> привнесёт элементы из вселенной <span class="hh">Portal 2</span> в вашу игру! Новый интерфейс, порталы, механизмы и блоки — всё для создания уникальных приключений.
+    </p>
+    <img src="img/portal2-mod.jpg" alt="Portal 2 Mod" />
+  </section>
+
+  <section id="features" class="container fade-in">
+    <h2>Особенности мода</h2>
+    <ul>
+      <li>Портальные устройства для мгновенных перемещений ⯪</li>
+      <li>Новые блоки и механизмы в стиле <span class="hh">Portal 2 ⛏</span></li>
+      <li>Полная совместимость с <span class="gg">Minecraft 1.20.1 ⚓</span></li>
+    </ul>
+  </section>
+
+  <section id="download" class="container fade-in">
+    <h2>Скачать мод</h2>
+    <p>Нажмите кнопку, чтобы скачать последнюю версию мода.</p>
+    <a href="https://github.com/Iriscom/irisfantom/releases/download/realise/irisportal-0.0.1-mc1.20.1-fabric.jar" class="btn">Скачать</a>
+  </section>
+
+  <section id="contact" class="container fade-in">
+    <h2>Контакты</h2>
+    <p>Если у вас есть вопросы или предложения, свяжитесь с нами:</p>
+    <ul class="d">
+      <li>✉ Telegram: <a href="https://t.me/Iris_teme">Канал ⏴</a></li>
+      <li>⏻ IrisTech: <a href="irisTech.html" target="_blank" rel="noopener">Глав.канал IrisTech ⏴</a></li>
+    </ul>
+  </section>
+
+  <footer class="fade-in">
+    <div class="container footer-container">
+      <p>&copy; 2025 IrisTEAM. НЕ ЯВЛЯЕТСЯ ОФИЦИАЛЬНЫМ СЕРВИСОМ MINECRAFT. НЕ ОДОБРЕНО И НЕ СВЯЗАНО С MOJANG ИЛИ MICROSOFT.</p>
+      <p class="ff">❤Отдельное спасибо IrisTech и Lopitus❤</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = {
+        threshold: 0.3,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+
+      // Скроллинг шапки
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scroll-active');
+        } else {
+          header.classList.remove('scroll-active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

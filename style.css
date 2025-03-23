@@ -1,0 +1,307 @@
+/* Переменные для цветовой гаммы и шрифтов */
+@font-face {
+  font-family: "Minecraft";
+  src: url(F77\ Minecraft.woff) format("woff");
+}
+:root {
+  --primary-color: #000000;
+  --secondary-color: #101010;
+  --portal-blue: #0091d5;
+  --portal-orange: #ff7f00;
+  --highlight-color: #4db8ff;
+  --text-color: #ffffff;
+  --light-text: #cccccc;
+  --border-color: #444;
+  --transition-time: 0.5s;
+  --font-family: 'Minecraft';
+}
+
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  transition: background var(--transition-time), color var(--transition-time);
+}
+.gg {
+  color: #0091d5;
+}
+.hh {
+  color: #ff7f00;
+}
+ul li a{
+  text-decoration: none;
+  color: #ff7f00;
+}
+
+/* Контейнер */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.scrollable-content {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+}
+
+/* Кастомизация ползунка */
+.scrollable-content::-webkit-scrollbar {
+  width: 12px; /* Ширина ползунка */
+  height: 12px; /* Высота ползунка для горизонтальной прокрутки */
+}
+
+/* Кастомизация области ползунка (track) */
+.scrollable-content::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+  border-radius: 6px;
+}
+
+/* Кастомизация самого ползунка (thumb) */
+.scrollable-content::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 6px;
+  border: 2px solid #888; /* Контур вокруг ползунка */
+}
+
+/* При наведении на ползунок */
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Основной стиль header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+.ff {
+  color: pink;
+}
+/* Контейнер шапки */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Логотип */
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--portal-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: var(--portal-orange);
+}
+
+/* Навигационное меню */
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+/* Наведение на ссылки */
+nav ul li a:hover {
+  background-color: var(--portal-blue);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Подсветка активных ссылок */
+nav ul li a.active {
+  color: var(--portal-blue);
+  font-weight: 700;
+}
+
+/* Анимация появления */
+header.fade-in {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+header.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Эффект прокрутки для шапки */
+header.scroll-active {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Герой */
+#hero {
+  background: url('images/portal2-hero.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  border-bottom: 3px solid var(--portal-blue);
+  position: relative;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--portal-blue);
+}
+
+#hero p {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+#hero a {
+  background-color: var(--portal-blue);
+  color: #fff;
+  padding: 14px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#hero a:hover {
+  background-color: var(--portal-orange);
+  transform: translateY(-5px);
+}
+
+/* Кнопки */
+.btn {
+  background: var(--portal-blue);
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: var(--portal-orange);
+  transform: translateY(-3px);
+}
+
+/* Секции */
+section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: var(--highlight-color);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+section p,
+section ul {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--light-text);
+}
+
+section ul {
+  list-style: disc inside;
+  text-align: left;
+}
+
+section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Футер */
+footer {
+  background: var(--primary-color);
+  padding: 20px 0;
+  border-top: 3px solid var(--portal-blue);
+}
+
+.footer-container {
+  text-align: center;
+  color: var(--highlight-color);
+}
+
+/* Анимации появления */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Адаптив
